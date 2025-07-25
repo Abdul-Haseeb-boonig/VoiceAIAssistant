@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice AI Chatbot</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="logo">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div class="header-text">
+                        <h1>Voice AI Assistant</h1>
+                        <p id="status-text">Ready to chat</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="connection-status">
+                        <i class="fas fa-signal"></i>
+                        <span>Good</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Chat Messages -->
+        <main class="chat-container">
+            <div id="messages" class="messages">
+                <!-- Welcome Message -->
+                <div id="welcome-message" class="welcome">
+                    <div class="welcome-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h2>Welcome to Voice AI Chat</h2>
+                    <p>Start a conversation by clicking the microphone button below</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Voice Controls -->
+        <footer class="voice-controls">
+            <!-- Recording Status -->
+            <div id="recording-status" class="recording-status" style="display: none;">
+                <div class="recording-indicator">
+                    <div class="recording-dot"></div>
+                    <span>Recording</span>
+                    <div class="audio-bars">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="recording-info">
+                    <span id="recording-duration">00:00</span>
+                    <button id="stop-recording-btn" class="btn-stop">
+                        <i class="fas fa-microphone-slash"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Error Message -->
+            <div id="error-message" class="error-message" style="display: none;">
+                <div class="error-content">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <div>
+                        <p class="error-title">Connection Error</p>
+                        <p class="error-description"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Controls -->
+            <div class="main-controls">
+                <div class="mic-container">
+                    <div id="recording-ring" class="recording-ring" style="display: none;"></div>
+                    <button id="mic-btn" class="mic-btn">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button id="clear-btn" class="action-btn">
+                    <i class="fas fa-trash"></i>
+                    <span>Clear</span>
+                </button>
+                <button id="settings-btn" class="action-btn">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </button>
+                <button id="help-btn" class="action-btn">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Help</span>
+                </button>
+            </div>
+
+            <!-- Status Indicators -->
+            <div class="status-indicators">
+                <div class="status-item">
+                    <div class="status-dot microphone-status"></div>
+                    <span>Microphone Ready</span>
+                </div>
+                <div class="status-item">
+                    <div class="status-dot api-status"></div>
+                    <span>API Connected</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Processing Overlay -->
+    <div id="processing-overlay" class="processing-overlay" style="display: none;">
+        <div class="processing-content">
+            <div class="spinner"></div>
+            <p>Processing your message...</p>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
